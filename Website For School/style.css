@@ -1,0 +1,367 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif, 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: url(Assets/background.jpg);
+    color: #fff;
+}
+
+.container {
+    padding: 10px 10%;
+    position: sticky;
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: scale(1.09);
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: "";
+    width: 0%;
+    height: 3px;
+    background: #E38D03;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.sale img {
+    margin-left: 198px;
+    cursor: pointer;
+    width: 720px;
+    height: 468px;
+    border: 2px solid #F75606;
+    transition: box-shadow 0.5s, transform 0.5s;
+    border-radius: 14px;
+}
+
+.sale img:hover {
+    box-shadow: 2px 2px 4px #E38D03;
+    transform: scale(0.91);
+}
+
+.iphone img {
+    height: 468px;
+    position: absolute;
+    top: 220px;
+    left: 918px;
+    cursor: pointer;
+    border: 2px solid white;
+    transition: box-shadow 0.5s, transform 0.5s;
+    border-radius: 14px;
+}
+
+.iphone img:hover {
+    box-shadow: 2px 2px 4px #E38D03;
+    transform: scale(0.91);
+}
+
+.grid {
+    display: grid;
+}
+
+.banner img {
+    width: 800px;
+    margin-left: 380px;
+    transition: box-shadow 0.5s, transform 0.5s;
+    border-radius: 14px;
+}
+
+.banner img:hover {
+    box-shadow: 2px 2px 4px #E38D03;
+    transform: scale(0.91);
+}
+
+.box {
+    border: none;
+    width: 1220px;
+    height: 300px;
+    margin: auto;
+    background-color: #111313;
+    border-radius: 15px;
+}
+
+.heading {
+    margin-left: 610px;
+    color: #E38D03;
+}
+
+.button {
+    margin-left: 947px;
+    border: 2px solid #E38D03;
+    cursor: pointer;
+    width: 200px;
+    height: 35px;
+    background: none;
+    transition: background-color 0.5s;
+    font-size: 16px;
+    color: white;
+}
+
+.button:hover {
+    background-color: #E38D03;
+}
+
+.header {
+    background-color: #111313;
+}
+
+.search-bar {
+    border: 2px solid black;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    height: 40px;
+    width: 300px;
+    color: white;
+    display: inline;
+    position: relative;
+    left: 60px;
+    font-size: 17px;
+    text-align: center;
+}
+
+.icon {
+    padding-left: 0px;
+    display: inline;
+}
+
+/* Updated styling for product list items */
+/* Each image is wrapped in an <a> tag for individual clicking */
+
+.items li {
+    display: flex;
+    box-sizing: border-box;
+    height: 250px;
+    padding-top: 10px;
+}
+
+.items li a {
+    display: inline-block;
+    padding: 0 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: transform 0.5s, box-shadow 0.5s;
+    text-decoration: none;
+    outline: none;
+}
+
+.items li a img {
+    display: block;
+    border-radius: 25px;
+    transition: transform 0.5s;
+    max-height: 230px;
+}
+
+/* Hover effect on the entire link wrapping the image */
+.items li a:hover,
+.items li a:hover img {
+    transform: scale(1.05);
+    box-shadow: 2px 2px 6px #E38D03;
+}
+
+.box h1 {
+    text-align: center;
+    color: #E38D03;
+}
+
+/* Modal background with fade animation */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+/* Show modal with fade in */
+.modal.show {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Modal content with scale + fade animation */
+.modal-content {
+    background-color: #E38D03;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Show modal content */
+.modal.show .modal-content {
+    transform: scale(1.2);
+    opacity: 1.5;
+}
+
+/* Close button style */
+.close-btn {
+    color: #000;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.close-btn:hover {
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* Form input styling */
+.modal-content form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+
+/* Submit button */
+.modal-content form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    position: relative;
+    transition: transform 0.5s;
+}
+
+.modal-content form button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Loading spinner animation for button */
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Button loading state */
+button.loading {
+    pointer-events: none;
+    color: transparent;
+}
+
+button.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid white;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spinner 0.8s linear infinite;
+}
+
+.copyright-text {
+    margin-top: 10px;
+    background-color: #111313;
+    padding: 10px;
+    text-align: center;
+    border-radius: 16px;
+}
+
+.copyright-text {   
+    position: relative;
+    cursor: pointer;
+}
+
+.others {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+.hover-text {
+    visibility: hidden;
+    width: 140px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    /* shows above the text */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.copyright-text:hover .hover-text {
+    visibility: visible;
+    opacity: 1;
+}
